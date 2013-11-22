@@ -25,6 +25,7 @@ class AdminController extends Controller
     {   
         $em = $this->container->get('em');
         $translator = $this->container->get('translator');
+        
         $settings = $em->getRepository('Newscoop\ArticleRecommendationBundle\Entity\Settings')->findOneBy(array(
             'is_active' => true
         ));

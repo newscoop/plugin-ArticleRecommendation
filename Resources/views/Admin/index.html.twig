@@ -51,13 +51,16 @@ $(document).ready(function() {
 <form action="{{ path('newscoop_articlerecommendation_admin_index') }}" method="post" {{ form_enctype(form) }} >
     <table id="article-recommend-settingsTable" border="0" cellspacing="0" cellpadding="0" class="box_table">
         <tbody>
+            <tr>
+                <td class="article-recommend-border"></td>
+            </tr>
             <tr class="article-recommend-bg">
                 <td align="left" class="article-recommend-size article-recommend-border">   
                     {{ form_label(form.captcha) }} <br>
                     <small>{{ 'plugin.recommendation.label.captchasmall'|trans }}</small>
                 </td>
             </tr>
-            <tr class="article-recommend-bg">
+            <tr>
                 <td class="article-recommend-border">
                     {{ form_widget(form.captcha, {'attr' : {'class' : 'input_check'}}) }}
                 </td>
@@ -71,7 +74,7 @@ $(document).ready(function() {
                     <small>{{ 'plugin.recommendation.label.forloggedsmall'|trans }}</small> 
                 </td>
             </tr>
-            <tr class="article-recommend-bg">
+            <tr>
                 <td class="article-recommend-border">
                     {{ form_widget(form.forLoggedIn, {'attr' : {'class' : 'input_check'}}) }}
                 </td>

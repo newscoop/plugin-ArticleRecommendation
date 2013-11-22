@@ -34,7 +34,11 @@ class LifecycleSubscriber implements EventSubscriberInterface
         $settings = new Settings();
         $settings->setCaptcha(true);
         $settings->setForLoggedIn(true);
-        $settings->setMessage('/* Some custom message */');
+        $settings->setMessage(
+        'Description: %articleLead%
+
+        Read: %link%
+        This e-mail was sent by %user% via your website.');
         $settings->setIsActive(true);
         $settings->setCreatedAt(new \DateTime('now'));
         $this->em->persist($settings);
