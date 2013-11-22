@@ -10,6 +10,7 @@ namespace Newscoop\ArticleRecommendationBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Newscoop\EventDispatcher\Events\GenericEvent;
+use Newscoop\ArticleRecommendationBundle\Entity\Settings;
 
 /**
  * Event lifecycle management
@@ -29,6 +30,15 @@ class LifecycleSubscriber implements EventSubscriberInterface
 
         // Generate proxies for entities
         $this->em->getProxyFactory()->generateProxyClasses($this->getClasses(), __DIR__ . '/../../../../library/Proxy');
+
+        $settings = new Settings();
+        $settings->setCaptcha(true);
+        $settings->setForLoggedIn(true);
+        $settings->setMessage('/* Some custom message */');
+        $settings->setIsActive(true);
+        $settings->setCreatedAt(new \DateTime('now'));
+        $this->em->persist($settings);
+        $this->em->flush();
     }
 
     public function update(GenericEvent $event)
