@@ -1,0 +1,6 @@
+Plugins: "Plugins"
+plugin:
+  recommendation:
+    titlecontent: "Article recommendation settings"
+    label:
+      menu: "Article recommendation"
