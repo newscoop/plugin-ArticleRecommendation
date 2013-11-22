@@ -19,7 +19,6 @@ class ArticleRecommendationController extends Controller
 {
     /**
     * @Route("/plugin/article-recommendation/send")
-    * @Template()
     */
     public function sendAction(Request $request)
     {   
