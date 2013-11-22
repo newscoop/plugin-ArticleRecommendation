@@ -1,0 +1,14 @@
+services:
+    newscoop_article_recommendation.lifecyclesubscriber:
+        class: Newscoop\ArticleRecommendationBundle\EventListener\LifecycleSubscriber
+        arguments:
+            - @em
+        tags:
+            - { name: kernel.event_subscriber}
+
+    newscoop_article_recommendation.configure_menu_listener:
+        class: Newscoop\ArticleRecommendationBundle\EventListener\ConfigureMenuListener
+        tags:
+            - { name: kernel.event_listener, event: newscoop_newscoop.menu_configure, method: onMenuConfigure }
+        arguments: 
+            - @translator
