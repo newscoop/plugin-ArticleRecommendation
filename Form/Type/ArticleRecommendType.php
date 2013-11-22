@@ -40,6 +40,17 @@ class ArticleRecommendType extends AbstractType
         ))
         ->add('article_number', 'hidden', array(
             'required' => true
+        ))
+        ->add('recaptcha', 'newscoop_recaptcha', array(
+            'attr' => array(
+                'options' => array(
+                    'theme' => 'white'
+                )
+            ),
+            'mapped' => false,
+            'constraints'   => array(
+                new True()
+            )
         ));
     }
 
