@@ -62,7 +62,7 @@ class ArticleRecommendationController extends Controller
                     );
 
                     $message = \Swift_Message::newInstance()
-                        ->setSubject($translator->trans('plugin.recommendation.email.subject', array('%article%' => $article->getName())))
+                        ->setSubject($translator->trans('plugin.recommendation.email.subject', array('%articleName%' => $article->getName())))
                         ->setFrom($data['sender_email'])
                         ->setTo($data['recipient_email'])
                         ->setBody(
@@ -71,9 +71,9 @@ class ArticleRecommendationController extends Controller
                                 array(
                                     'usermessage' => $data['message'],
                                     'message' => $translator->trans($settings->getMessage(), array(
-                                        '%articleLead%' => $article->getData('deck') ? $article->getData('deck') : $article->getName(),
-                                        '%link%' => $link,
-                                        '%user%' => $data['sender_name']
+                                        '%articleLead%' => $article->getData('deck') ? strip_tags($article->getData('deck')) : $article->getName(),
+                                        '%articleLink%' => $link,
+                                        '%userName%' => $data['sender_name']
                                     ))
                                 )
                             )

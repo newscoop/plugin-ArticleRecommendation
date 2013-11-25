@@ -37,8 +37,8 @@ class LifecycleSubscriber implements EventSubscriberInterface
         $settings->setMessage(
         'Description: %articleLead%
 
-        Read: %link%
-        This e-mail was sent by %user% via your website.');
+        Read: %articleLink%
+        This e-mail was sent by %userName% via your website.');
         $settings->setIsActive(true);
         $settings->setCreatedAt(new \DateTime('now'));
         $this->em->persist($settings);
