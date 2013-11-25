@@ -12,11 +12,23 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use EWZ\Bundle\RecaptchaBundle\Validator\Constraints\True;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Doctrine\ORM\EntityManager;
 
 class ArticleRecommendType extends AbstractType
-{
-    public function buildForm(FormBuilderInterface $builder, array $options)
+{   
+    private $em;
+
+    public function __construct(EntityManager $em)
     {
+        $this->em = $em;
+    }
+
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {   
+        $settings =  $this->em->getRepository('Newscoop\ArticleRecommendationBundle\Entity\Settings')->findOneBy(array(
+            'is_active' => true
+        ));
+
         $builder->add('recipient_email', 'email', array(
             'label' => 'plugin.recommendation.label.recipientemail',
             'error_bubbling' => true,
@@ -40,18 +52,21 @@ class ArticleRecommendType extends AbstractType
         ))
         ->add('article_number', 'hidden', array(
             'required' => true
-        ))
-        ->add('recaptcha', 'newscoop_recaptcha', array(
-            'attr' => array(
-                'options' => array(
-                    'theme' => 'white'
-                )
-            ),
-            'mapped' => false,
-            'constraints'   => array(
-                new True()
-            )
         ));
+
+        if ($settings->getCaptcha()) {
+            $builder->add('recaptcha', 'ewz_recaptcha', array(
+                'attr' => array(
+                    'options' => array(
+                        'theme' => 'white'
+                    )
+                ),
+                'mapped' => false,
+                'constraints'   => array(
+                    new True()
+                )
+            ));
+        }
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

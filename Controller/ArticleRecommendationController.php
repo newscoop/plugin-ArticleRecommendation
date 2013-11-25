@@ -26,7 +26,7 @@ class ArticleRecommendationController extends Controller
         $translator = $this->container->get('translator');
         $mailer = $this->container->get('mailer');
         $user = $this->container->get('user')->getCurrentUser();
-        $form = $this->container->get('form.factory')->create(new ArticleRecommendType(), array(), array());
+        $form = $this->container->get('form.factory')->create(new ArticleRecommendType($em), array(), array());
         $isLoggedIn = false;
         $settings = $em->getRepository('Newscoop\ArticleRecommendationBundle\Entity\Settings')->findOneBy(array(
             'is_active' => true
