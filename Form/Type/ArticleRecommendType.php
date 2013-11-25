@@ -56,11 +56,6 @@ class ArticleRecommendType extends AbstractType
 
         if ($settings->getCaptcha()) {
             $builder->add('recaptcha', 'ewz_recaptcha', array(
-                'attr' => array(
-                    'options' => array(
-                        'theme' => 'white'
-                    )
-                ),
                 'mapped' => false,
                 'constraints'   => array(
                     new True()
