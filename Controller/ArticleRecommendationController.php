@@ -43,7 +43,7 @@ class ArticleRecommendationController extends Controller
             if ($isLoggedIn && ($loggedSetting || !$loggedSetting) || !$isLoggedIn && !$loggedSetting) {
                 if ($form->isValid()) {
                     $data = $form->getData();
-            
+
                     if ($user) {
                         $data['sender_email'] = $user->getEmail();
                         $data['sender_name'] = $user->getRealName();
@@ -61,27 +61,31 @@ class ArticleRecommendationController extends Controller
                         $article->getNumber()
                     );
 
-                    $message = \Swift_Message::newInstance()
-                        ->setSubject($translator->trans('plugin.recommendation.email.subject', array('%articleName%' => $article->getName())))
-                        ->setFrom($data['sender_email'])
-                        ->setTo($data['recipient_email'])
-                        ->setBody(
-                            $this->renderView(
-                                'NewscoopArticleRecommendationBundle::email.txt.twig',
-                                array(
-                                    'usermessage' => $data['message'],
-                                    'message' => $translator->trans($settings->getMessage(), array(
-                                        '%articleLead%' => $article->getData('deck') ? strip_tags($article->getData('deck')) : $article->getName(),
-                                        '%articleLink%' => $link,
-                                        '%userName%' => $data['sender_name']
-                                    ))
+                    try {
+                        $message = \Swift_Message::newInstance()
+                            ->setSubject($translator->trans('plugin.recommendation.email.subject', array('%articleName%' => $article->getName())))
+                            ->setFrom($data['sender_email'])
+                            ->setTo($data['recipient_email'])
+                            ->setBody(
+                                $this->renderView(
+                                    'NewscoopArticleRecommendationBundle::email.txt.twig',
+                                    array(
+                                        'usermessage' => $data['message'],
+                                        'message' => $translator->trans($settings->getMessage(), array(
+                                            '%articleLead%' => $data['field_type'] ? strip_tags($article->getData($data['field_type'])) : $article->getName(),
+                                            '%articleLink%' => $link,
+                                            '%userName%' => $data['sender_name']
+                                        ))
+                                    )
                                 )
-                            )
-                        );
+                            );
 
-                    $mailer->send($message);
+                        $mailer->send($message);
 
-                    return new Response(json_encode(array('status' => true)));
+                        return new Response(json_encode(array('status' => true)));
+                    } catch (\Exception $e) {
+                        throw new Exception('An issue occured sending email.');
+                    }
                 }
             } else {
                 return new Response(json_encode(array('status' => false)));

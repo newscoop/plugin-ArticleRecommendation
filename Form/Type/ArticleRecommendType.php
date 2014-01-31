@@ -50,6 +50,9 @@ class ArticleRecommendType extends AbstractType
             'error_bubbling' => true,
             'required' => true
         ))
+        ->add('field_type', 'hidden', array(
+            'required' => false
+        ))
         ->add('article_number', 'hidden', array(
             'required' => true
         ));
