@@ -55,6 +55,12 @@ class ArticleRecommendType extends AbstractType
         ))
         ->add('article_number', 'hidden', array(
             'required' => true
+        ))
+        ->add('article_type', 'hidden', array(
+            'required' => false
+        ))
+        ->add('custom_field_type', 'hidden', array(
+            'required' => false
         ));
 
         if ($settings->getCaptcha()) {

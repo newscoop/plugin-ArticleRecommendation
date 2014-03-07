@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Newscoop\ArticleRecommendationBundle\Form\Type\ArticleRecommendType;
 
 class ArticleRecommendationController extends Controller
@@ -21,13 +21,14 @@ class ArticleRecommendationController extends Controller
     * @Route("/plugin/article-recommendation/send")
     */
     public function sendAction(Request $request)
-    {   
+    {
         $em = $this->container->get('em');
         $translator = $this->container->get('translator');
         $mailer = $this->container->get('mailer');
         $user = $this->container->get('user')->getCurrentUser();
         $form = $this->container->get('form.factory')->create(new ArticleRecommendType($em), array(), array());
         $isLoggedIn = false;
+        $response = array();
         $settings = $em->getRepository('Newscoop\ArticleRecommendationBundle\Entity\Settings')->findOneBy(array(
             'is_active' => true
         ));
@@ -53,13 +54,24 @@ class ArticleRecommendationController extends Controller
                         'number' => $data['article_number']
                     ));
 
-                    $link = \ShortURL::GetURL(
-                        $article->getPublicationId(),
-                        $article->getLanguageId(),
-                        $article->getIssueId(),
-                        $article->getSectionId(),
-                        $article->getNumber()
-                    );
+                    $link = $this->get('article.link')->getLinkCanonical($article);
+
+                    try {
+                        if ($article->getType() === $data['article_type']) {
+                            $articleLead = $data['custom_field_type'] ? strip_tags($article->getData($data['custom_field_type'])) : $article->getName();
+                        } else {
+                            try {
+                                $articleLead = $data['field_type'] ? strip_tags($article->getData($data['field_type'])) : $article->getName();
+                            } catch (\Exception $e) {
+                                $articleLead = $article->getName();
+                            }
+                        }
+                    } catch (\Exception $e) {
+                        return new JsonResponse(array(
+                            'status' => false,
+                            'response' => $e->getMessage()
+                        ));
+                    }
 
                     try {
                         $message = \Swift_Message::newInstance()
@@ -72,7 +84,7 @@ class ArticleRecommendationController extends Controller
                                     array(
                                         'usermessage' => $data['message'],
                                         'message' => $translator->trans($settings->getMessage(), array(
-                                            '%articleLead%' => $data['field_type'] ? strip_tags($article->getData($data['field_type'])) : $article->getName(),
+                                            '%articleLead%' => $articleLead,
                                             '%articleLink%' => $link,
                                             '%userName%' => $data['sender_name']
                                         ))
@@ -82,14 +94,27 @@ class ArticleRecommendationController extends Controller
 
                         $mailer->send($message);
 
-                        return new Response(json_encode(array('status' => true)));
+                        $response['response'] = array('status' => true);
                     } catch (\Exception $e) {
-                        throw new Exception('An issue occured sending email.');
+                        $response['response'] = array(
+                            'status' => false,
+                            'message' => $e->getMessage()
+                        );
                     }
+                } else {
+                    $response['response'] = array(
+                        'status' => false,
+                        'message' => $translator->trans('plugin.recommendation.msg.invalid')
+                    );
                 }
             } else {
-                return new Response(json_encode(array('status' => false)));
+                $response['response'] = array(
+                    'status' => false,
+                    'message' => $translator->trans('plugin.recommendation.msg.loggedin')
+                );
             }
+
+            return new JsonResponse($response);
         }
     }
 }

@@ -14,5 +14,7 @@ plugin:
     msg:
       saved: "Successfully saved."
       error: "Could not save your custom message."
+      invalid: "Invalid ReCAPTCHA code."
+      loggedin: "You have to be logged in to recommend article."
     email:
       subject: "Recommended article: %articleName%"
