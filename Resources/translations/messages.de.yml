@@ -1,20 +1,20 @@
 Plugins: Plugins
 plugin:
-  recommendation:
-    btn:
-      save: ' Speichern'
-    email:
-      subject: 'Empfohlener Artikel: %articleName%'
-    label:
-      captcha: reCAPTCHA aktivieren?
-      captchasmall: reCaptcha für das Artikelempfehlungsformular aktivieren.
-      forlogged: Nur eingeloggte Nutzer zulassen
-      forloggedsmall: Erlaubt nur eingeloggten Nutzern das Artikelempfehlungsformular zu sehen.
-      menu: Artikelempfehlung
-      message: 'Legen Sie eine benutzerdefinierte Empfehlungs-E-Mail-Nachricht fest. '
-    msg:
-      error: 'Konnte benutzerdefinierte Nachricht nicht speichern.  '
-      invalid: Ungültiger reCAPTCHA-Code.
-      loggedin: 'Sie müssen eingeloggt sein, um Artikel zu empfehlen. '
-      saved: Erfolgreich gespeichert.
-    titlecontent: Artikelempfehlungs-Einstellungen
+    recommendation:
+        btn:
+            save: ' Speichern'
+        titlecontent: Artikelempfehlungs-Einstellungen
+        label:
+            menu: Artikelempfehlung
+            captcha: 'reCAPTCHA aktivieren?'
+            captchasmall: 'reCaptcha für das Artikelempfehlungsformular aktivieren.'
+            forlogged: 'Nur eingeloggte Nutzer zulassen'
+            forloggedsmall: 'Erlaubt nur eingeloggten Nutzern das Artikelempfehlungsformular zu sehen.'
+            message: 'Legen Sie eine benutzerdefinierte Empfehlungs-E-Mail-Nachricht fest. '
+        msg:
+            saved: 'Erfolgreich gespeichert.'
+            error: 'Konnte benutzerdefinierte Nachricht nicht speichern.  '
+            invalid: 'Ungültiger reCAPTCHA-Code.'
+            loggedin: 'Sie müssen eingeloggt sein, um Artikel zu empfehlen. '
+        email:
+            subject: 'Empfohlener Artikel: %articleName%'
