@@ -1,0 +1,20 @@
+Plugins: Wtyczki
+plugin:
+    recommendation:
+        btn:
+            save: Zapisz
+        titlecontent: null
+        label:
+            menu: null
+            captcha: null
+            captchasmall: null
+            forlogged: null
+            forloggedsmall: null
+            message: null
+        msg:
+            saved: null
+            error: null
+            invalid: null
+            loggedin: null
+        email:
+            subject: null

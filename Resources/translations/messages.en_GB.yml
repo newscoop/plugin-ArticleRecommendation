@@ -1,0 +1,20 @@
+Plugins: Plugins
+plugin:
+    recommendation:
+        btn:
+            save: Save
+        titlecontent: 'Article recommendation settings'
+        label:
+            menu: 'Article recommendation'
+            captcha: 'Enable reCAPTCHA?'
+            captchasmall: 'Enables reCAPTCHA for article recommendation form.'
+            forlogged: 'Allow only logged in users'
+            forloggedsmall: 'Allows only logged in users to see article recommendation form.'
+            message: 'Define custom recommendation e-mail message'
+        msg:
+            saved: 'Successfully saved.'
+            error: 'Could not save your custom message.'
+            invalid: 'Invalid reCAPTCHA code.'
+            loggedin: 'You have to be logged in to recommend an article.'
+        email:
+            subject: 'Recommended article: %articleName%'
