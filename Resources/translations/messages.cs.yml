@@ -1,20 +1,20 @@
-Plugins: null
+Plugins: Plug-iny
 plugin:
     recommendation:
         btn:
-            save: null
-        titlecontent: null
+            save: Uložit
+        titlecontent: 'Doporučené nastavení článku'
         label:
-            menu: null
-            captcha: null
-            captchasmall: null
-            forlogged: null
-            forloggedsmall: null
+            menu: 'Doporučení článku'
+            captcha: 'Povolit reCAPTCHA?'
+            captchasmall: 'Povolit reCaptcha pro doporučenou formu článku.'
+            forlogged: 'Povolit pouze přihlášené uživatele '
+            forloggedsmall: 'Dovolí pouze přihlášeným uživatelům vidět doporučené formy článku.'
             message: null
         msg:
-            saved: null
+            saved: 'Úspěšně uloženo.'
             error: null
-            invalid: null
-            loggedin: null
+            invalid: 'Neplatný ReCAPTCHA kód.'
+            loggedin: 'K doporučení článku musíte být přihlášení. '
         email:
-            subject: null
+            subject: 'Doporučený článek: %článekNázev%'
