@@ -14,7 +14,7 @@ plugin:
         msg:
             saved: null
             error: null
-            invalid: null
-            loggedin: null
+            invalid: 'كود إختبار ReCAPTCHA غير صالح.'
+            loggedin: 'يجب أن تسجل الدخول أولاً حتى تتمكن من التوصية بمقال .'
         email:
             subject: null
