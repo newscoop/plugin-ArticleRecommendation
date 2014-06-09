@@ -1,20 +1,20 @@
-Plugins: null
+Plugins: Plugins
 plugin:
     recommendation:
         btn:
-            save: null
-        titlecontent: null
+            save: Gem
+        titlecontent: 'Indstillinger for artikel anbefalinger'
         label:
-            menu: null
-            captcha: null
-            captchasmall: null
-            forlogged: null
-            forloggedsmall: null
-            message: null
+            menu: 'Artikel anbefalinger'
+            captcha: 'Brug reCAPTCHA?'
+            captchasmall: 'Brug reCAPTCHA til anbefal artikel formularen.'
+            forlogged: 'Tillad kun registrerede brugere'
+            forloggedsmall: 'Kun registrerede brugere kan se anbefal artikel formularen.'
+            message: 'Tekst til e-mail med artikel anbefaling'
         msg:
-            saved: null
-            error: null
-            invalid: null
-            loggedin: null
+            saved: Gemt.
+            error: 'Teksten kunne ikke gemmes.'
+            invalid: 'Ugyldig reCAPTCHA kode.'
+            loggedin: 'Du skal være logget ind for at anbefale en artikel.'
         email:
-            subject: null
+            subject: 'Anbefalede artiklen: %articleName%'
