@@ -8,12 +8,12 @@ plugin:
             menu: 'توصية مقال'
             captcha: 'تفعيل إختبار reCAPTCHA؟'
             captchasmall: 'تفعيل إختبار reCAPTCHA لمقال معين.'
-            forlogged: null
-            forloggedsmall: null
-            message: null
+            forlogged: 'إسمح لمستخدمين فقط تم تسجيلهم'
+            forloggedsmall: 'إسمح لمتسخدمين فقط تم تسجيلهم أن يروا منوذج توصية مقال.'
+            message: 'تحديد رسالة إيميل لتوصيه مخصصة'
         msg:
-            saved: null
-            error: null
+            saved: 'تم الحفظ بنجاح.'
+            error: 'لم يتم حفظ الرسالة المخصصة لك.'
             invalid: 'كود إختبار ReCAPTCHA غير صالح.'
             loggedin: 'يجب أن تسجل الدخول أولاً حتى تتمكن من التوصية بمقال .'
         email:
