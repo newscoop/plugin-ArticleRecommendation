@@ -2,12 +2,12 @@ Plugins: 'وحدات قابسة'
 plugin:
     recommendation:
         btn:
-            save: null
-        titlecontent: null
+            save: حفظ
+        titlecontent: 'إعدادات توصية المقالات.'
         label:
-            menu: null
-            captcha: null
-            captchasmall: null
+            menu: 'توصية مقال'
+            captcha: 'تفعيل إختبار reCAPTCHA؟'
+            captchasmall: 'تفعيل إختبار reCAPTCHA لمقال معين.'
             forlogged: null
             forloggedsmall: null
             message: null
