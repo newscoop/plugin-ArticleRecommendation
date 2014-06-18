@@ -17,4 +17,4 @@ plugin:
             invalid: 'كود إختبار ReCAPTCHA غير صالح.'
             loggedin: 'يجب أن تسجل الدخول أولاً حتى تتمكن من التوصية بمقال .'
         email:
-            subject: null
+            subject: 'مقال موصى به %إسم المقال%.'
