@@ -1,20 +1,20 @@
-Plugins: null
+Plugins: Plaqinlər
 plugin:
     recommendation:
         btn:
-            save: null
-        titlecontent: null
+            save: Saxla
+        titlecontent: 'Məqalə tövsiyyə parametrləri'
         label:
-            menu: null
-            captcha: null
-            captchasmall: null
-            forlogged: null
-            forloggedsmall: null
-            message: null
+            menu: 'Məqalə tövsiyyəsi'
+            captcha: 'reCAPTCHA-nı aktivləşdirirsən?'
+            captchasmall: 'Məqalə tövsiyyə forması üçün reCaptcha-nı aktivləşdirir.'
+            forlogged: 'Yalnız giriş etmiş istifadəçilərə icazə ver'
+            forloggedsmall: 'Məqalə tövsiyyə forması yalnız giriş etmiş istifadəçilər üçün açıqdır.'
+            message: 'Xüsusi tövsiyyə e-mail mesajını müəyyənləşdir'
         msg:
-            saved: null
-            error: null
-            invalid: null
-            loggedin: null
+            saved: 'Uğurla saxlandı.'
+            error: 'Xüsusi mesajın saxlanmadı.'
+            invalid: 'Səhv ReCAPTCHA şifrəsi.'
+            loggedin: 'Məqaləni tövsiyyə etmək üçün giriş etməlisən.'
         email:
-            subject: null
+            subject: 'Tövsiyyə edilmiş məqalə: %articleName%'
