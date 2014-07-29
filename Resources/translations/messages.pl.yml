@@ -3,18 +3,18 @@ plugin:
     recommendation:
         btn:
             save: Zapisz
-        titlecontent: null
+        titlecontent: 'Ustawienia rekomendacji artykułu'
         label:
-            menu: null
-            captcha: null
-            captchasmall: null
-            forlogged: null
-            forloggedsmall: null
-            message: null
+            menu: 'Rekomendacja artykułu'
+            captcha: 'Włączyć reCAPTCHA?'
+            captchasmall: 'Włącza reCAPTCHA dla formularza rekomendacji artykułu'
+            forlogged: 'Zezwól tylko dla zalogowanych użytkowników'
+            forloggedsmall: 'Pozwala na zobaczenie formularza rekomendacji artykułu jedynie dla zalogowanych użytkowników.'
+            message: 'Określ własną wiadomość e-mail'
         msg:
-            saved: null
-            error: null
-            invalid: null
-            loggedin: null
+            saved: 'Zapisano pomyślnie.'
+            error: 'Nie można zapisać twojej wiadomości.'
+            invalid: 'Błędny kod reCAPTCHA.'
+            loggedin: 'Musisz być zalogowany aby zarekomendować artykuł.'
         email:
-            subject: null
+            subject: 'Rekomendowany artykuł: %articleName%'
