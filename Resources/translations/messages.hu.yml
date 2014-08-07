@@ -6,7 +6,7 @@ plugin:
         titlecontent: null
         label:
             menu: null
-            captcha: null
+            captcha: 'Engedélyezi a reCAPTCHA szolgáltatást?'
             captchasmall: null
             forlogged: null
             forloggedsmall: null
