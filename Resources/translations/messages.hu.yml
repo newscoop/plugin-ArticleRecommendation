@@ -15,6 +15,6 @@ plugin:
             saved: null
             error: null
             invalid: null
-            loggedin: null
+            loggedin: 'Önnek be kell jelentkeznie a cikk ajánlásához.'
         email:
             subject: null
