@@ -12,7 +12,7 @@ plugin:
             forloggedsmall: null
             message: null
         msg:
-            saved: null
+            saved: 'Sikeresen elmentve.'
             error: null
             invalid: null
             loggedin: 'Önnek be kell jelentkeznie a cikk ajánlásához.'
