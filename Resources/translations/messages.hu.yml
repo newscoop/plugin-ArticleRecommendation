@@ -3,11 +3,11 @@ plugin:
     recommendation:
         btn:
             save: Mentés
-        titlecontent: null
+        titlecontent: 'Cikkajánlás beállításai'
         label:
-            menu: null
+            menu: 'Cikk ajánlása'
             captcha: 'Engedélyezi a reCAPTCHA szolgáltatást?'
-            captchasmall: null
+            captchasmall: 'A reCAPTCHA engedélyezése a cikkajánlás űrlaphoz.'
             forlogged: null
             forloggedsmall: null
             message: null
