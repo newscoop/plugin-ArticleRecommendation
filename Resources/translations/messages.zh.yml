@@ -1,18 +1,18 @@
-Plugins: null
+Plugins: 插件
 plugin:
     recommendation:
         btn:
-            save: null
-        titlecontent: null
+            save: 保存
+        titlecontent: '文章推荐设置 '
         label:
-            menu: null
-            captcha: null
-            captchasmall: null
-            forlogged: null
-            forloggedsmall: null
+            menu: 文章推荐
+            captcha: '启用验证码？ '
+            captchasmall: 使用文章推荐表时启用验证码。
+            forlogged: 只允许登陆用户
+            forloggedsmall: 只允许登陆用户查看文章推荐表。
             message: null
         msg:
-            saved: null
+            saved: 保存成功。
             error: null
             invalid: null
             loggedin: null
