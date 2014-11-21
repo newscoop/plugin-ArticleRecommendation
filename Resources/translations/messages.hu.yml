@@ -6,7 +6,7 @@ plugin:
         titlecontent: 'Cikkajánlás beállításai'
         label:
             menu: 'Cikk ajánlása'
-            captcha: 'Engedélyezi a reCAPTCHA szolgáltatást?'
+            captcha: 'Engedélyezed a reCAPTCHA szolgáltatást?'
             captchasmall: 'A reCAPTCHA engedélyezése a cikkajánlás űrlaphoz.'
             forlogged: 'Csak a bejelentkezett felhasználók számára engedélyezett'
             forloggedsmall: 'A cikkajánlás űrlap megtekintésének engedélyezése csak a bejelentkezett felhasználók számára. '
