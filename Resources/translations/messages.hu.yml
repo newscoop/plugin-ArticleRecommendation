@@ -12,9 +12,9 @@ plugin:
             forloggedsmall: 'A cikkajánlás űrlap megtekintésének engedélyezése csak a bejelentkezett felhasználók számára. '
             message: 'Egyéni ajánló e-mail üzenet megadása'
         msg:
-            saved: 'Sikeresen elmentve.'
+            saved: 'A mentés sikerült.'
             error: 'Nem lehet menteni az egyéni üzenetedet.'
             invalid: 'Érvénytelen reCAPTCHA-kód.'
-            loggedin: 'Önnek be kell jelentkeznie a cikk ajánlásához.'
+            loggedin: 'A cikkajánlásához be kell jelentkezned.'
         email:
             subject: 'Az ajánlott cikk: %articleName%'
