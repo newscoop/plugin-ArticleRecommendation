@@ -1,8 +1,8 @@
-Plugins: null
+Plugins: Pluginovi
 plugin:
     recommendation:
         btn:
-            save: null
+            save: Snimi
         titlecontent: null
         label:
             menu: null
@@ -12,7 +12,7 @@ plugin:
             forloggedsmall: null
             message: null
         msg:
-            saved: null
+            saved: 'Uspešno snimljeno.'
             error: null
             invalid: null
             loggedin: null
